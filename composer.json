@@ -1,0 +1,25 @@
+{
+    "name": "qcloudapi-sdk-php/cospackage",
+	"license" : "MIT",
+    "authors": [
+        {
+            "name": "rex",
+            "email": "381244953@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Gkcosapi\\Cospackage\\": "src/"
+        }
+    },
+	 "minimum-stability": "dev",
+    "require": {
+		"php": ">=5.6"
+	},
+	 "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
