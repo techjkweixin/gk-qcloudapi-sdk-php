@@ -8,8 +8,17 @@
  项目根目录composer.json配置require
  ```
     "require": {
-        "gk-qcloudapi-sdk-php/cospackage": "~1.0",
+          "gk-qcloudapi-sdk-php/cospackage": "~2.0",
+        "qcloud/cos-sdk-v5": ">=1.0",
+        "qcloud/vod-sdk-v5": "v1.2.1"
         }
+        
+      "repositories": { 
+        "cospackage": {
+            "type": "vcs",
+            "url": "https://github.com/techjkweixin/gk-qcloudapi-sdk-php.git"
+        }
+    }
  ```
 
 通过COMPOSER 命令获取项目
