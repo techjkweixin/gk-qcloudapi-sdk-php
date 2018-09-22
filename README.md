@@ -8,7 +8,7 @@
  项目根目录composer.json配置require
  ```
     "require": {
-        "qcloudapi-sdk-php/cospackage": "~3.0",
+        "gk-qcloudapi-sdk-php/cospackage": "~1.0",
         }
  ```
 
