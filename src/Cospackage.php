@@ -144,7 +144,7 @@ class Cospackage extends StatusException
      */
     public function screen($fileId, $timeOffset)
     {
-        $fileId = request('fid');
+        $fileId = request('fid',$fileId);
         $privateParams = CurlCommon::commonList($timeOffset, 'timeOffset');
         $privateParams['fileId'] = $fileId;
         $privateParams['definition'] = 10;
