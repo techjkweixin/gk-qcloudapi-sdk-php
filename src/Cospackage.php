@@ -17,12 +17,14 @@ class Cospackage extends StatusException
     protected $secretKey;
     protected $options;
     protected $cosService;
+    protected $project;
 
     public function __construct()
     {
         $this->options = config('cospackage.options');
         $this->secretId = $this->options['secret_id'];
         $this->secretKey = $this->options['secret_key'];
+        $this->project = $this->options['project'];
     }
 
     public function getService()
@@ -33,14 +35,11 @@ class Cospackage extends StatusException
 
     /**
      * VOD 返回上传签名[前端上传业务使用]
-     * @return Object
-     * @author lwj <381244953@qq.com>
-     * @param1 _application string
-     * @param2 _type string
+     * @return string
      */
     public function getSignKey()
     {
-        return CurlCommon::sign($this->secretId, $this->secretKey);
+        return CurlCommon::sign($this->secretId, $this->secretKey, $this->project);
     }
 
     /**

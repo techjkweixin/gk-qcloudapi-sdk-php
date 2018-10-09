@@ -12,5 +12,6 @@ return [
         'secret_key' => env('COS_SECRET_KEY', 'e3D8tRpyta6NO9fvvf8ey3tWt0rSovmN'),//开发者拥有的项目身份密钥
         'bucket' => env('COS_BUCKET', 'share-static'),//COS 中用于存储数据的容器
         'region' => env('COS_REGION', 'cn-sorth'),//域名中的地域信息。枚举值参见 可用地域 文档，如：ap-beijing, ap-hongkong, eu-frankfurt 等
+        'project' => env('COS_PROJECT', 'zhidian'),
     ] // API 配置项
 ];

@@ -60,23 +60,25 @@ class CurlCommon
 
     /**
      * api接口 外部请求VOD 调用签名
-     * @return Object
-     * @author lwj <381244953@qq.com>
-     * @param1 data string/array  当前提交的数据
-     * @param2 title string  参数字段名前缀
+     * @param $secretId
+     * @param $secretKey
+     * @param $project
+     * @return string
      */
-    public static function sign($secretId, $secretKey)
+    public static function sign($secretId, $secretKey, $project)
     {
         // 确定签名的当前时间和失效时间
         $current = time();
         $expired = $current + 86400;  // 签名有效期：1天
 
         // 向参数列表填入参数
-        $arg_list = array(
+        $arg_list = [
             "secretId" => $secretId,
             "currentTimeStamp" => $current,
             "expireTime" => $expired,
-            "random" => rand());
+            "random" => rand(),
+            "sourceContext" => $project
+        ];
         // 计算签名
         $orignal = http_build_query($arg_list);
         $signature = base64_encode(hash_hmac('SHA1', $orignal, $secretKey, true) . $orignal);
